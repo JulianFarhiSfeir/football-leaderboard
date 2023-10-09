@@ -1,0 +1,13 @@
+<table>
+  <tbody>
+    <tr *ngFor="let fixture of fixtures">
+      <td><img class="icon" [src]="fixture.homeLogo" alt="Home team logo"></td>
+      <td>{{fixture.homeTeamName}}</td>
+      <td>{{fixture.homeScore}}</td>
+      <td>-</td>
+      <td>{{fixture.awayScore}}</td>
+      <td>{{fixture.awayTeamName}}</td>
+      <td><img class="icon" [src]="fixture.awayLogo" alt="Away team logo"></td>
+    </tr>
+  </tbody>
+</table>

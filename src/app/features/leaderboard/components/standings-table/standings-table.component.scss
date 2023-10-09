@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  border: 1px solid #555;
+
+  td, th {
+    padding: 5px 10px;
+    border: 1px solid #555;
+  }
+  th {
+    font-weight: 800;
+  }
+}
+
+.cell {
+  &.team {
+    width: 28%;
+  }
+  &.logo {
+    text-align: center;
+  }
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+a {
+  display: block;
+  padding: 5px 10px;
+}
+
+

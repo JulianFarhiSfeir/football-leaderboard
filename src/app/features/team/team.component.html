@@ -1,0 +1,5 @@
+<h1>Last 10 games</h1>
+
+<app-fixtures-table [fixtures]="(fixtures$ | async)!"></app-fixtures-table>
+
+<a class="button" [routerLink]="['../../']" [relativeTo]="activateRoute">Back</a>

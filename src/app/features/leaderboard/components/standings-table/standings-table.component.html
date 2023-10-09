@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th>Games</th>
+      <th>W</th>
+      <th>L</th>
+      <th>D</th>
+      <th>Goal difference</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let standing of standings">
+      <td class="cell rank">{{standing.rank}}</td>
+      <td class="cell logo"><img [src]="standing.logo" alt="Team logo"></td>
+      <td class="cell team"><a class="link" [routerLink]="['team', standing.teamId]">{{standing.teamName}}</a></td>
+      <td class="cell games">{{standing.gamesCount}}</td>
+      <td class="cell win">{{standing.winCount}}</td>
+      <td class="cell loss">{{standing.lossesCount}}</td>
+      <td class="cell draw">{{standing.drawsCount}}</td>
+      <td class="cell goal-difference">{{standing.goalDifferenceCount}}</td>
+      <td class="cell points">{{standing.points}}</td>
+    </tr>
+  </tbody>
+</table>

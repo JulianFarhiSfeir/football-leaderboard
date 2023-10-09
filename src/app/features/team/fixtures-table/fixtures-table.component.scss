@@ -1,0 +1,16 @@
+table {
+  table-layout: auto;
+  border-collapse: collapse;
+  border: 1px solid #555;
+
+  td, th {
+    padding: 5px 10px;
+    border: 1px solid #555;
+  }
+}
+
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
