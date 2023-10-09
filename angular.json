@@ -91,6 +91,12 @@
             "browserTarget": "football-leaderboard:build"
           }
         },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://github.com/JulianFarhiSfeir/football-leaderboard"
+          }
+        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {

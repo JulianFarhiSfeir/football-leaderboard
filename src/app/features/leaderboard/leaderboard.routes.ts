@@ -24,12 +24,17 @@ export const LEADERBOARD_ROUTES: Routes = [
         resolve: {
           fixtures: fixturesResolver
         }
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: Countries[0].name
       }
     ]
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: `country/${Countries[0].name}`
+    redirectTo: `country`
   }
 ];
