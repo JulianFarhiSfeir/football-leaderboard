@@ -28,4 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Build
 
-Define `base-ref` with the repository name, copy the `index.html` and create a `404.html` page 
+Copy the `index.html` and create a `404.html` page

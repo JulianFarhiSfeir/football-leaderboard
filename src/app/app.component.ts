@@ -8,7 +8,4 @@ import {FootballApiService} from "./core/football-api.service";
 })
 export class AppComponent {
   title = 'football-leaderboard';
-
-  constructor(private footballApiService: FootballApiService) {
-  }
 }
