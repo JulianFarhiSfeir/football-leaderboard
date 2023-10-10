@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
-import {CountryNavigationComponent} from "../leaderboard/components/country-navigation/country-navigation.component";
-import {StandingsTableComponent} from "../leaderboard/components/standings-table/standings-table.component";
+import {CountryNavigationComponent} from "../../shared/components/country-navigation/country-navigation.component";
+import {StandingsTableComponent} from "../../shared/components/standings-table/standings-table.component";
 import {ActivatedRoute} from "@angular/router";
 import {map} from "rxjs";
 import {AsyncPipe} from "@angular/common";
+import {FootballApiService} from "../../../../core/api/football-api.service";
 
 @Component({
     selector: 'app-country',
@@ -17,6 +18,8 @@ import {AsyncPipe} from "@angular/common";
     standalone: true
 })
 export class CountryComponent {
+    public countries: string[] = FootballApiService.leaguesCountriesCollection
+        .map((leagueCountry) => leagueCountry.countryName);
     constructor(public activateRouteSnapshot: ActivatedRoute) {
     }
 

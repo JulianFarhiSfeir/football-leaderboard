@@ -1,7 +1,7 @@
 import {ResolveFn} from '@angular/router';
 import {inject} from "@angular/core";
-import {FootballApiService} from "../../core/football-api.service";
-import {Fixture} from "./fixtures-table/fixtures-table.typings";
+import {FootballApiService} from "../../../../core/api/football-api.service";
+import {Fixture} from "../../shared/components/fixtures-table/fixtures-table.typings";
 import {map} from "rxjs";
 
 export const fixturesResolver: ResolveFn<Fixture[]> = (route, state) => {

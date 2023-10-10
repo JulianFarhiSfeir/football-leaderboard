@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {map, Observable} from "rxjs";
-import {Fixture} from "./fixtures-table/fixtures-table.typings";
+import {Fixture} from "../../shared/components/fixtures-table/fixtures-table.typings";
 import {ActivatedRoute, Data, RouterLink} from "@angular/router";
-import {FixturesTableComponent} from "./fixtures-table/fixtures-table.component";
+import {FixturesTableComponent} from "../../shared/components/fixtures-table/fixtures-table.component";
 import {AsyncPipe} from "@angular/common";
 
 @Component({

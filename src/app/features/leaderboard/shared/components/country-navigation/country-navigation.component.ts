@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
-import {FootballApiService} from "../../../../core/football-api.service";
+import {FootballApiService} from "../../../../../core/api/football-api.service";
 
 @Component({
     selector: 'app-country-navigation',
@@ -11,5 +11,6 @@ import {FootballApiService} from "../../../../core/football-api.service";
     imports: [CommonModule, RouterModule]
 })
 export class CountryNavigationComponent {
-    public countries = FootballApiService.leaguesCountriesCollection;
+    @Input()
+    public countries: string[] = [];
 }

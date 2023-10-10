@@ -1,8 +1,8 @@
 import {ResolveFn} from '@angular/router';
 import {inject} from "@angular/core";
 import {map} from "rxjs";
-import {FootballApiService} from "../../core/football-api.service";
-import {Standing} from "./components/standings-table/standings-table.typings";
+import {FootballApiService} from "../../core/api/football-api.service";
+import {Standing} from "./shared/components/standings-table/standings-table.typings";
 
 export const standingsResolver: ResolveFn<Standing[]> = (route, state) => {
     const footballApiService = inject(FootballApiService);

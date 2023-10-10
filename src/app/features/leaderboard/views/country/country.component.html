@@ -1,5 +1,5 @@
 <h1>Leaderboard by country</h1>
 
-<app-country-navigation></app-country-navigation>
+<app-country-navigation [countries]="countries"></app-country-navigation>
 
 <app-standings-table [standings]="standings$ | async"></app-standings-table>

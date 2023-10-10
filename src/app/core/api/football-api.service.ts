@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
-import {environment} from "../../environments/environment";
+import {environment} from "../../../environments/environment";
 import {map, Observable} from "rxjs";
 import {
     ExternalFixture,
@@ -51,6 +51,7 @@ export class FootballApiService {
     constructor(private httpClient: HttpClient) {
     }
 
+    // todo
     public getLeague(country: string, league: string) {
         return this.httpClient.get(`${environment.footballApiBaseUrl}/leagues`, {
             params: new HttpParams({

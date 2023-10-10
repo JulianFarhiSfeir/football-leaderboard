@@ -56,11 +56,8 @@ export interface ExternalFixture {
 
 export interface LeagueCountry {
     countryName: string;
-    countryFlag?: string;
-    countryId?: number;
+    countryId: number;
     leagueName: string;
-    leagueId?: number;
-    leagueLogo?: string;
 }
 
 export interface LeagueCountries {

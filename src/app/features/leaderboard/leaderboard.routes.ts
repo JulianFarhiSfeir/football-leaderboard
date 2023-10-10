@@ -1,10 +1,8 @@
 import {Routes} from '@angular/router';
 import {LeaderboardComponent} from "./leaderboard.component";
 import {standingsResolver} from "./standings.resolver";
-import {CountryComponent} from "../country/country.component";
-import {TeamComponent} from "../team/team.component";
-import {fixturesResolver} from "../team/fixtures.resolver";
-import {FootballApiService} from "../../core/football-api.service";
+import {fixturesResolver} from "./views/team/fixtures.resolver";
+import {FootballApiService} from "../../core/api/football-api.service";
 
 export const LEADERBOARD_ROUTES: Routes = [
     {
@@ -13,14 +11,14 @@ export const LEADERBOARD_ROUTES: Routes = [
         children: [
             {
                 path: ':country',
+                loadComponent: () => import('././views/country/country.component').then(c => c.CountryComponent),
                 resolve: {
                     standings: standingsResolver
                 },
-                component: CountryComponent
             },
             {
                 path: ':country/team/:teamId',
-                component: TeamComponent,
+                loadComponent: () => import('./views/team/team.component').then(c => c.TeamComponent),
                 resolve: {
                     fixtures: fixturesResolver
                 }

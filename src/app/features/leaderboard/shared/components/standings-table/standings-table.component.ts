@@ -11,6 +11,6 @@ import {Standing} from "./standings-table.typings";
     imports: [CommonModule, RouterModule]
 })
 export class StandingsTableComponent {
-    @Input({required: true})
-    public standings!: Standing[];
+    @Input()
+    public standings: Standing[] = [];
 }

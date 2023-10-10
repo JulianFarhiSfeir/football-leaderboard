@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {FootballApiInterceptor} from "./core/interceptors/football-api.interceptor";
+import {FootballApiInterceptor} from "./core/api/football-api.interceptor";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
