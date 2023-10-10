@@ -1,7 +1,7 @@
 import {Routes} from '@angular/router';
 import {LeaderboardComponent} from "./leaderboard.component";
-import {standingsResolver} from "./standings.resolver";
-import {fixturesResolver} from "./views/team/fixtures.resolver";
+import {standingsResolver} from "./views/country/resolvers/standings.resolver";
+import {fixturesResolver} from "./views/team/resolvers/fixtures.resolver";
 import {FootballApiService} from "../../core/api/football-api.service";
 
 export const LEADERBOARD_ROUTES: Routes = [
@@ -26,7 +26,7 @@ export const LEADERBOARD_ROUTES: Routes = [
             {
                 path: '',
                 pathMatch: 'full',
-                redirectTo: FootballApiService.leaguesCountriesCollection[0].countryName
+                redirectTo: FootballApiService.countriesLeaguesCollection[0].country
             }
         ]
     },

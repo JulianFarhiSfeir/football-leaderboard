@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {CommonModule} from "@angular/common";
+import {CommonModule, NgOptimizedImage} from "@angular/common";
 import {Fixture} from "./fixtures-table.typings";
 
 @Component({
@@ -7,10 +7,10 @@ import {Fixture} from "./fixtures-table.typings";
     templateUrl: './fixtures-table.component.html',
     styleUrls: ['./fixtures-table.component.scss'],
     standalone: true,
-    imports: [CommonModule]
+    imports: [CommonModule, NgOptimizedImage]
 })
 export class FixturesTableComponent {
-    @Input({required: true})
-    public fixtures!: Fixture[]
+    @Input()
+    public fixtures: Fixture[] = [];
 
 }

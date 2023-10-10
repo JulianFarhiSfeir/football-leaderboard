@@ -1,8 +1,5 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {LeaderboardComponent} from "./features/leaderboard/leaderboard.component";
-import {StandingsTableComponent} from "./features/leaderboard/shared/components/standings-table/standings-table.component";
-import {LEADERBOARD_ROUTES} from "./features/leaderboard/leaderboard.routes";
 
 const routes: Routes = [
     {

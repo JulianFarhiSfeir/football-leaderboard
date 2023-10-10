@@ -1,8 +1,8 @@
 import {ResolveFn} from '@angular/router';
 import {inject} from "@angular/core";
 import {map} from "rxjs";
-import {FootballApiService} from "../../core/api/football-api.service";
-import {Standing} from "./shared/components/standings-table/standings-table.typings";
+import {FootballApiService} from "../../../../../core/api/football-api.service";
+import {Standing} from "../../../shared/components/standings-table/standings-table.typings";
 
 export const standingsResolver: ResolveFn<Standing[]> = (route, state) => {
     const footballApiService = inject(FootballApiService);
@@ -12,11 +12,11 @@ export const standingsResolver: ResolveFn<Standing[]> = (route, state) => {
         return [];
     }
 
-    const leagueCountry = FootballApiService.leaguesCountriesMap.get(country);
-    if (!leagueCountry?.countryId) {
+    const league = FootballApiService.countriesLeaguesMap.get(country);
+    if (!league?.id) {
         return [];
     }
-    return footballApiService.getStanding(leagueCountry.countryId)
+    return footballApiService.getStanding(league.id)
         .pipe(
             map((standings) => standings.map((standing) =>
                 new Standing({

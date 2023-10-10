@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {CommonModule} from "@angular/common";
-import {RouterModule} from "@angular/router";
+import {CommonModule, NgOptimizedImage} from "@angular/common";
+import {RouterLink, RouterModule} from "@angular/router";
 import {Standing} from "./standings-table.typings";
 
 @Component({
@@ -8,7 +8,7 @@ import {Standing} from "./standings-table.typings";
     templateUrl: './standings-table.component.html',
     styleUrls: ['./standings-table.component.scss'],
     standalone: true,
-    imports: [CommonModule, RouterModule]
+    imports: [CommonModule, NgOptimizedImage, RouterLink]
 })
 export class StandingsTableComponent {
     @Input()

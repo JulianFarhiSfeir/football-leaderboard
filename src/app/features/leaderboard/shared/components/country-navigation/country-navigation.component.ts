@@ -1,14 +1,13 @@
 import {Component, Input} from '@angular/core';
 import {CommonModule} from "@angular/common";
-import {RouterModule} from "@angular/router";
-import {FootballApiService} from "../../../../../core/api/football-api.service";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
     selector: 'app-country-navigation',
     templateUrl: './country-navigation.component.html',
     styleUrls: ['./country-navigation.component.scss'],
     standalone: true,
-    imports: [CommonModule, RouterModule]
+    imports: [CommonModule, RouterLink, RouterLinkActive]
 })
 export class CountryNavigationComponent {
     @Input()

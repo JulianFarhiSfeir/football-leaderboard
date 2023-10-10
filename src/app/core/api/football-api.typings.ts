@@ -23,16 +23,6 @@ export interface ExternalStanding {
     }
 }
 
-export interface ExternalLeague {
-    id: number;
-    name: string;
-    country: string;
-    logo: string;
-    flag: string;
-    season: number;
-    standings: ExternalStanding[]
-}
-
 export interface ExternalFixture {
     teams: {
         home: {
@@ -54,14 +44,14 @@ export interface ExternalFixture {
     }
 }
 
-export interface LeagueCountry {
-    countryName: string;
-    countryId: number;
-    leagueName: string;
+export interface League {
+    country: string;
+    id: number;
+    name: string;
 }
 
-export interface LeagueCountries {
-    [key: string]: LeagueCountry
+export interface CountriesLeagues {
+    [key: string]: League
 }
 
 export interface ExternalPayload<T> {

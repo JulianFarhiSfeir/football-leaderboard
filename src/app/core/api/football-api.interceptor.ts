@@ -5,6 +5,8 @@ import {environment} from "../../../environments/environment";
 
 @Injectable()
 export class FootballApiInterceptor implements HttpInterceptor {
+    private CUSTOM_HEADER_API_HOST = 'x-rapidapi-host';
+    private CUSTOM_HEADER_API_KEY = 'x-rapidapi-key'
     constructor() {
     }
 
@@ -13,8 +15,8 @@ export class FootballApiInterceptor implements HttpInterceptor {
             return next.handle(request);
         }
         const headers = new HttpHeaders({
-            'x-rapidapi-host': environment.footballApiHost,
-            'x-rapidapi-key': environment.footballApiKey
+            [this.CUSTOM_HEADER_API_HOST]: environment.footballApiHost,
+            [this.CUSTOM_HEADER_API_KEY]: environment.footballApiKey
         })
         const clonedRequest = request.clone({
             headers

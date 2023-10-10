@@ -5,8 +5,16 @@ app-fixtures-table {
 
 .button {
   display: inline-flex;
-  padding: 10px 20px;
-  background-color: #b9dcfc;
-  border: 1px solid #5d7180;
+  padding: 10px 40px;
+  background-color: var(--primary);
   border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  box-shadow: var(--default-box-shadow);
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0,0,0, .55);
 }

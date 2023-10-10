@@ -1,17 +1,23 @@
 <table>
     <tbody>
     <tr *ngFor="let fixture of fixtures">
-        <td><img class="icon"
-                 [src]="fixture.homeLogo"
-                 alt="Home team logo"></td>
-        <td>{{fixture.homeTeamName}}</td>
+        <td>
+            <img [ngSrc]="fixture.homeLogo"
+                 width="30"
+                 height="30"
+                 alt="{{fixture.homeTeamName}} - home team logo">
+        </td>
+        <td class="team">{{fixture.homeTeamName}}</td>
         <td>{{fixture.homeScore}}</td>
         <td>-</td>
         <td>{{fixture.awayScore}}</td>
-        <td>{{fixture.awayTeamName}}</td>
-        <td><img class="icon"
-                 [src]="fixture.awayLogo"
-                 alt="Away team logo"></td>
+        <td class="team">{{fixture.awayTeamName}}</td>
+        <td>
+            <img [ngSrc]="fixture.awayLogo"
+                 width="30"
+                 height="30"
+                 alt="{{fixture.awayTeamName}} - away team logo">
+        </td>
     </tr>
     </tbody>
 </table>

@@ -2,12 +2,13 @@ table {
   width: 100%;
   table-layout: auto;
   border-collapse: collapse;
-  border: 1px solid #555;
+  border: 1px solid var(--default-border-color);
   background-color: white;
+  box-shadow: var(--default-box-shadow);
 
   td, th {
     padding: 5px 10px;
-    border: 1px solid #555;
+    border: 1px solid var(--default-border-color);
   }
 
   th {
@@ -15,19 +16,13 @@ table {
   }
 }
 
-.cell {
-  &.team {
-    width: 28%;
-  }
 
-  &.logo {
-    text-align: center;
-  }
+.team {
+  width: 28%;
 }
 
-img {
-  width: 30px;
-  height: 30px;
+.logo {
+  text-align: center;
 }
 
 a {

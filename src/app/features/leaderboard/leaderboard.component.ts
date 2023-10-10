@@ -3,7 +3,6 @@ import {StandingsTableComponent} from "./shared/components/standings-table/stand
 import {CountryNavigationComponent} from "./shared/components/country-navigation/country-navigation.component";
 import {CommonModule} from "@angular/common";
 import {RouterOutlet} from "@angular/router";
-import {Standing} from "./shared/components/standings-table/standings-table.typings";
 
 @Component({
     selector: 'app-leaderboard',
@@ -14,7 +13,4 @@ import {Standing} from "./shared/components/standings-table/standings-table.typi
 })
 export class LeaderboardComponent {
 
-
-    constructor() {
-    }
 }

@@ -1,3 +1,12 @@
+interface ConstructorParams {
+    homeLogo: string;
+    homeTeamName: string;
+    homeScore: number;
+    awayLogo: string;
+    awayTeamName: string;
+    awayScore: number;
+}
+
 export class Fixture {
     homeLogo: string;
     homeTeamName: string;
@@ -6,19 +15,12 @@ export class Fixture {
     awayTeamName: string;
     awayScore: number;
 
-    constructor({homeLogo, homeTeamName, homeScore, awayLogo, awayTeamName, awayScore}: {
-        homeLogo: string,
-        homeTeamName: string,
-        homeScore: number,
-        awayLogo: string,
-        awayTeamName: string,
-        awayScore: number
-    }) {
-        this.homeLogo = homeLogo;
-        this.homeTeamName = homeTeamName;
-        this.homeScore = homeScore;
-        this.awayLogo = awayLogo;
-        this.awayTeamName = awayTeamName;
-        this.awayScore = awayScore;
+    constructor(payload: ConstructorParams) {
+        this.homeLogo = payload.homeLogo;
+        this.homeTeamName = payload.homeTeamName;
+        this.homeScore = payload.homeScore;
+        this.awayLogo = payload.awayLogo;
+        this.awayTeamName = payload.awayTeamName;
+        this.awayScore = payload.awayScore;
     }
 }

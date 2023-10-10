@@ -1,17 +1,15 @@
 table {
   table-layout: auto;
   border-collapse: collapse;
-  border: 1px solid #555;
+  box-shadow: var(--default-box-shadow);
 
   td, th {
-    padding: 5px 10px;
-    border: 1px solid #555;
+    padding: 10px 20px;
+    border: 1px solid var(--default-border-color);
     background-color: white;
   }
 }
 
-
-.icon {
-  width: 30px;
-  height: 30px;
+.team {
+  width: 25%;
 }

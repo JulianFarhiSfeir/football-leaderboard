@@ -6,85 +6,76 @@ import {
     ExternalFixture,
     ExternalPayload,
     ExternalStanding, ExternalStandingsPayload,
-    LeagueCountries,
-    LeagueCountry
+    CountriesLeagues,
+    League
 } from "./football-api.typings";
 
 @Injectable({
     providedIn: 'root'
 })
 export class FootballApiService {
-    private static LEAGUES_COUNTRIES: LeagueCountries = {
+    private static COUNTRIES_LEAGUES: CountriesLeagues = {
         England: {
-            countryName: 'England',
-            leagueName: 'Premier League',
-            countryId: 39,
+            country: 'England',
+            name: 'Premier League',
+            id: 39,
         },
         Spain: {
-            countryName: 'Spain',
-            leagueName: 'La Liga',
-            countryId: 140,
+            country: 'Spain',
+            name: 'La Liga',
+            id: 140,
         },
         France: {
-            countryName: 'France',
-            leagueName: 'Ligue 1',
-            countryId: 61,
+            country: 'France',
+            name: 'Ligue 1',
+            id: 61,
         },
         Germany: {
-            countryName: 'Germany',
-            leagueName: 'Bundesliga',
-            countryId: 78,
+            country: 'Germany',
+            name: 'Bundesliga',
+            id: 78,
         },
         Italy: {
-            countryName: 'Italy',
-            leagueName: 'Serie A',
-            countryId: 135,
+            country: 'Italy',
+            name: 'Serie A',
+            id: 135,
         },
     }
-    public static leaguesCountriesCollection: LeagueCountry[] = Object.values(FootballApiService.LEAGUES_COUNTRIES);
-    public static leaguesCountriesMap: Map<string, LeagueCountry> = new Map(
-        FootballApiService.leaguesCountriesCollection.map((country: LeagueCountry) =>
-            [country.countryName, country]
+    public static countriesLeaguesCollection: League[] = Object.values(FootballApiService.COUNTRIES_LEAGUES);
+    public static countriesLeaguesMap: Map<string, League> = new Map(
+        FootballApiService.countriesLeaguesCollection.map((country: League) =>
+            [country.country, country]
         )
     );
 
     constructor(private httpClient: HttpClient) {
     }
 
-    // todo
-    public getLeague(country: string, league: string) {
-        return this.httpClient.get(`${environment.footballApiBaseUrl}/leagues`, {
-            params: new HttpParams({
-                fromObject: {
-                    name: league,
-                    country,
-                }
-            })
-        })
-    }
-
     public getStanding(leagueId: number): Observable<ExternalStanding[]> {
+        const params = new HttpParams({
+            fromObject: {
+                league: leagueId,
+                season: new Date().getFullYear()
+            }
+        })
         return this.httpClient.get<ExternalPayload<ExternalStandingsPayload[]>>(`${environment.footballApiBaseUrl}/standings`, {
-            params: new HttpParams({
-                fromObject: {
-                    league: leagueId,
-                    season: new Date().getFullYear()
-                }
-            }),
+            params,
         })
             .pipe(
-                map((payload) => payload.response?.[0]?.league?.standings[0])
+                map((payload) => payload.response?.[0]?.league?.standings?.[0])
             )
     }
 
-    public getFixtures(teamId: number): Observable<ExternalFixture[]> {
+    public getFixtures(teamId: number, leagueId: number): Observable<ExternalFixture[]> {
+        const params = new HttpParams({
+            fromObject: {
+                team: teamId,
+                league: leagueId,
+                last: 10
+            }
+        });
         return this.httpClient.get<ExternalPayload<ExternalFixture[]>>(`${environment.footballApiBaseUrl}/fixtures`, {
-            params: new HttpParams({
-                fromObject: {
-                    team: teamId,
-                    last: 10
-                }
-            }),
+            params
         })
             .pipe(
                 map((payload) => payload?.response)

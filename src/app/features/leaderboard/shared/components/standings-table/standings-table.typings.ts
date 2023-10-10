@@ -1,4 +1,16 @@
-// todo
+interface ConstructorParams {
+    rank: number;
+    logo: string;
+    teamName: string;
+    teamId: number;
+    gamesCount: number;
+    winCount: number;
+    lossesCount: number;
+    drawsCount: number;
+    goalDifferenceCount: number;
+    points: number;
+}
+
 export class Standing {
     rank: number;
     logo: string;
@@ -11,38 +23,16 @@ export class Standing {
     goalDifferenceCount: number;
     points: number;
 
-    constructor({
-                    rank,
-                    logo,
-                    teamName,
-                    teamId,
-                    gamesCount,
-                    winCount,
-                    lossesCount,
-                    drawsCount,
-                    goalDifferenceCount,
-                    points
-                }: {
-        rank: number,
-        logo: string,
-        teamName: string,
-        teamId: number
-        gamesCount: number,
-        winCount: number,
-        lossesCount: number,
-        drawsCount: number,
-        goalDifferenceCount: number,
-        points: number
-    }) {
-        this.rank = rank;
-        this.logo = logo;
-        this.teamName = teamName;
-        this.teamId = teamId;
-        this.gamesCount = gamesCount;
-        this.winCount = winCount;
-        this.lossesCount = lossesCount;
-        this.drawsCount = drawsCount;
-        this.goalDifferenceCount = goalDifferenceCount;
-        this.points = points;
+    constructor(payload: ConstructorParams) {
+        this.rank = payload.rank;
+        this.logo = payload.logo;
+        this.teamName = payload.teamName;
+        this.teamId = payload.teamId;
+        this.gamesCount = payload.gamesCount;
+        this.winCount = payload.winCount;
+        this.lossesCount = payload.lossesCount;
+        this.drawsCount = payload.drawsCount;
+        this.goalDifferenceCount = payload.goalDifferenceCount;
+        this.points = payload.points;
     }
 }

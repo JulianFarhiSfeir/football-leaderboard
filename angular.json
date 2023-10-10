@@ -55,6 +55,9 @@
                 }
               ],
               "baseHref": "/football-leaderboard/",
+              "stylePreprocessorOptions": {
+                "includePaths": ["src/app/core/styles"]
+              },
               "outputHashing": "all"
             },
             "development": {
@@ -64,6 +67,11 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true,
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/app/core/styles"
+                ]
+              },
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",

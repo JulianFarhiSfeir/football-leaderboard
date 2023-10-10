@@ -1,16 +1,21 @@
 import {ResolveFn} from '@angular/router';
 import {inject} from "@angular/core";
-import {FootballApiService} from "../../../../core/api/football-api.service";
-import {Fixture} from "../../shared/components/fixtures-table/fixtures-table.typings";
+import {FootballApiService} from "../../../../../core/api/football-api.service";
+import {Fixture} from "../../../shared/components/fixtures-table/fixtures-table.typings";
 import {map} from "rxjs";
 
 export const fixturesResolver: ResolveFn<Fixture[]> = (route, state) => {
     const teamId = route.paramMap.get('teamId');
-    const footballApiService = inject(FootballApiService);
-    if (!teamId) {
+    const country = route.paramMap.get('country');
+    if(!country || !teamId) {
         return [];
     }
-    return footballApiService.getFixtures(Number(teamId))
+    const leagueCountry = FootballApiService.countriesLeaguesMap.get(country);
+    if(!leagueCountry?.id) {
+        return [];
+    }
+    const footballApiService = inject(FootballApiService);
+    return footballApiService.getFixtures(Number(teamId), Number(leagueCountry.id))
         .pipe(
             map((externalFixtures) => externalFixtures.map((ef) =>
                 new Fixture({

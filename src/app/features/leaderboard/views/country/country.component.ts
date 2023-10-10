@@ -18,12 +18,12 @@ import {FootballApiService} from "../../../../core/api/football-api.service";
     standalone: true
 })
 export class CountryComponent {
-    public countries: string[] = FootballApiService.leaguesCountriesCollection
-        .map((leagueCountry) => leagueCountry.countryName);
+    public countries: string[] = FootballApiService.countriesLeaguesCollection
+        .map((leagueCountry) => leagueCountry.country);
     constructor(public activateRouteSnapshot: ActivatedRoute) {
     }
 
     public standings$ = this.activateRouteSnapshot.data.pipe(
-        map((data) => data['standings'])
+        map((data) => data?.['standings'])
     );
 }
