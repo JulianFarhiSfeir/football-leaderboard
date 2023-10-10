@@ -2,8 +2,8 @@ import {Routes} from "@angular/router";
 import {TeamComponent} from "./team.component";
 
 export const TEAM_ROUTES: Routes = [
-  {
-    path: ':team',
-    component: TeamComponent
-  }
+    {
+        path: ':team',
+        component: TeamComponent
+    }
 ]

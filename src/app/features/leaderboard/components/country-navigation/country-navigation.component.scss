@@ -10,16 +10,20 @@ ul {
   list-style: none;
   justify-content: space-between;
   overflow: hidden;
+
   li {
     flex: 1;
+
     &:not(:last-child) {
       border-right: 1px solid #555;
     }
+
     a {
       display: block;
       padding: 10px 20px;
       text-align: center;
       background-color: white;
+
       &.active {
         background-color: #b9dcfc;
       }

@@ -4,13 +4,13 @@ import {RouterModule} from "@angular/router";
 import {Standing} from "./standings-table.typings";
 
 @Component({
-  selector: 'app-standings-table',
-  templateUrl: './standings-table.component.html',
-  styleUrls: ['./standings-table.component.scss'],
-  standalone: true,
-  imports: [CommonModule, RouterModule]
+    selector: 'app-standings-table',
+    templateUrl: './standings-table.component.html',
+    styleUrls: ['./standings-table.component.scss'],
+    standalone: true,
+    imports: [CommonModule, RouterModule]
 })
 export class StandingsTableComponent {
-  @Input({required: true})
-  public standings!: Standing[];
+    @Input({required: true})
+    public standings!: Standing[];
 }

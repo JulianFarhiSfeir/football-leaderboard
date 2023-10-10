@@ -1,9 +1,9 @@
 <nav>
-  <ul>
-    <li *ngFor="let country of countries">
-      <a id="{{(country.name | lowercase)}}Select"
-         [routerLink]="['/leaderboard', 'country', country.name]"
-         [routerLinkActive]="'active'">{{country.name}}</a>
-    </li>
-  </ul>
+    <ul>
+        <li *ngFor="let country of countries">
+            <a id="{{country.countryName}}Select"
+               [routerLink]="['/leaderboard', 'country', country.countryName]"
+               [routerLinkActive]="'active'">{{country.countryName}}</a>
+        </li>
+    </ul>
 </nav>

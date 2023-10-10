@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
-import {FootballApiService} from "./core/football-api.service";
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'football-leaderboard';
+    title = 'football-leaderboard';
 }
