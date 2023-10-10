@@ -3,10 +3,11 @@ import {inject} from "@angular/core";
 import {FootballApiService} from "../../../../../core/api/football-api.service";
 import {Fixture} from "../../../shared/components/fixtures-table/fixtures-table.typings";
 import {map} from "rxjs";
+import {LEADERBOARD_ROUTES_PARAMS} from "../../../leaderboard.routes";
 
 export const fixturesResolver: ResolveFn<Fixture[]> = (route, state) => {
-    const teamId = route.paramMap.get('teamId');
-    const country = route.paramMap.get('country');
+    const teamId = route.paramMap.get(LEADERBOARD_ROUTES_PARAMS.teamId.param);
+    const country = route.paramMap.get(LEADERBOARD_ROUTES_PARAMS.country.param);
     if(!country || !teamId) {
         return [];
     }

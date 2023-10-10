@@ -1,5 +1,7 @@
 <h1>Last 10 games</h1>
 
+<h2 *ngIf="teamName$ | async as teamName">{{ teamName }}</h2>
+
 <app-fixtures-table [fixtures]="(fixtures$ | async)!"></app-fixtures-table>
 
 <a class="button"

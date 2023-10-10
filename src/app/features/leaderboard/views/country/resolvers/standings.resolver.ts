@@ -3,10 +3,11 @@ import {inject} from "@angular/core";
 import {map} from "rxjs";
 import {FootballApiService} from "../../../../../core/api/football-api.service";
 import {Standing} from "../../../shared/components/standings-table/standings-table.typings";
+import {LEADERBOARD_ROUTES_PARAMS} from "../../../leaderboard.routes";
 
 export const standingsResolver: ResolveFn<Standing[]> = (route, state) => {
     const footballApiService = inject(FootballApiService);
-    const country = route.paramMap.get('country');
+    const country = route.paramMap.get(LEADERBOARD_ROUTES_PARAMS.country.param);
 
     if (!country) {
         return [];

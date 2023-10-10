@@ -18,3 +18,13 @@ h1 {
   color: white;
   text-shadow: 2px 2px 2px rgba(0,0,0, .55);
 }
+
+h2 {
+  overflow: hidden;
+  padding: 10px 20px;
+  border-radius: 8px 8px;
+  background-color: var(--primary);
+  box-shadow: var(--default-box-shadow);
+  text-align: center;
+  color: white;
+}
